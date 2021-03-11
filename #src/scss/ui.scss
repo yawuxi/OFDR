@@ -1,0 +1,21 @@
+/*----- user interface ----- */
+// Готовые блоки
+
+// Адаптивные изображения "IBG"
+.ibg {
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   position: relative;
+   padding: 0px 0px 50% 0px;
+}
+
+.ibg img {
+   width: 0;
+   height: 0;
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 0;
+   visibility: hidden;
+}
