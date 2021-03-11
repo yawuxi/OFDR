@@ -1,5 +1,340 @@
 /*----- header ----- */
+.header {
+   &__content {
+      border: 1px solid red;
+      margin-top: 20px;
+   }
 
+   &__menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__logo {
+      display: flex;
+      align-items: center;
+   }
+
+   &__first {
+      font-size: 52px;
+      font-weight: 700;
+      color: #e1e1e1;
+      margin-right: 50px;
+      position: relative;
+      @include adaptive-font(52, 45);
+   }
+
+   &__first::after {
+      content: "";
+      position: absolute;
+      right: -25px;
+      top: 5px;
+      width: 2px;
+      height: 40px;
+      background-color: #89afef;
+   }
+
+   &__second {
+      font-size: 14px;
+      font-weight: 500;
+      color: $textColor;
+   }
+
+   &__button {
+      box-shadow: 0px 8px 18px rgba(242, 147, 81, 0.450503);
+      border-radius: 3px;
+      padding: 12px 25px;
+      background: rgb(246, 189, 96);
+      background: linear-gradient(90deg, rgba(246, 189, 96, 1) 30%, rgba(232, 137, 82, 1) 100%);
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+   }
+}
+
+.menu {
+   &__list {
+      display: flex;
+   }
+
+   &__list li {
+      margin-right: 18px;
+   }
+
+   &__list li:last-child {
+      margin-right: 0px;
+   }
+
+   &__linkwp {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background-color: #2dd038;
+      background-image: url(../../img/whatsapp-logo.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0px 8px 25px rgba(45, 208, 56, 0.497678);
+      transition: transform 0.3s ease-in-out;
+   }
+
+   &__linkwp:hover {
+      transform: translateY(-5px);
+   }
+
+   &__linkvb {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background-color: #7b519d;
+      background-image: url(../../img/viber-logo.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0px 8px 25px rgba(123, 81, 157, 0.503797);
+      transition: transform 0.3s ease-in-out;
+   }
+
+   &__linkvb:hover {
+      transform: translateY(-5px);
+   }
+
+   &__linktg {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background-color: #5bbaf0;
+      background-image: url(../../img/telegram-logo.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0px 8px 25px rgba(91, 186, 240, 0.5);
+      transition: transform 0.3s ease-in-out;
+   }
+
+   &__linktg:hover {
+      transform: translateY(-5px);
+   }
+}
+
+.header-contacts {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+
+   &__link-phone {
+      font-size: 20px;
+      font-weight: 700;
+      color: $textColor;
+      position: relative;
+   }
+
+   &__link-phone::before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 0px;
+      width: 16px;
+      height: 16px;
+      background-image: url(../../img/header/phone.png);
+      background-repeat: no-repeat;
+   }
+
+   &__link-email {
+      font-size: 17px;
+      font-weight: 500;
+      color: $textColor;
+      position: relative;
+   }
+
+   &__link-email::before {
+      content: "";
+      position: absolute;
+      left: -25px;
+      top: 2px;
+      width: 100%;
+      height: 100%;
+      background-image: url(../../img/header/mail.png);
+      background-repeat: no-repeat;
+   }
+}
+
+.second-menu {
+   &__body {
+      margin-top: 30px;
+   }
+
+   &__list {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__link {
+      font-size: 19px;
+      color: $textColor;
+      font-weight: 500;
+      text-transform: uppercase;
+      @include adaptive-font(19, 9);
+   }
+}
+
+.burger-menu {
+   display: none;
+}
+
+@media (max-width: $md2) {
+   .header-contacts {
+      display: none;
+   }
+}
+
+@media (max-width: $md3) {
+   body.lock {
+      overflow: hidden;
+   }
+
+   .burger-menu {
+      content: "";
+      display: block;
+      position: relative;
+      left: 0px;
+      top: 0px;
+      width: 30px;
+      height: 20px;
+      z-index: 4;
+   }
+
+   .burger-menu::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition: transform 0.2s;
+   }
+
+   .burger-menu::after {
+      content: "";
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition: transform 0.2s;
+   }
+
+   .burger-menu span {
+      content: "";
+      position: absolute;
+      left: 0px;
+      bottom: 9px;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition: transform 0.2s;
+   }
+
+   .burger-menu.active::before {
+      transform: rotate(45deg);
+      top: 9px;
+      background-color: #fff;
+   }
+
+   .burger-menu.active::after {
+      transform: rotate(-45deg);
+      bottom: 9px;
+      background-color: #fff;
+   }
+   .burger-menu.active span {
+      transform: scale(0);
+      background-color: #fff;
+   }
+
+   .second-menu__body {
+      margin: 0;
+   }
+
+   .second-menu__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .second-menu__list li {
+      margin-bottom: 40px;
+   }
+   .second-menu__link {
+      color: white;
+      font-size: 35px;
+   }
+
+   .second-menu__body {
+      position: fixed;
+      left: 0;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      padding: 100px 0px 0px 25px;
+      transition: top 0.3s;
+      overflow: auto;
+   }
+
+   .second-menu__body.active {
+      top: 0;
+   }
+
+   .menu__body {
+      display: none;
+   }
+
+   .menu__list {
+      flex-direction: column;
+   }
+
+   .menu__list li {
+      margin: 25px 0px 0px 0px;
+   }
+
+   .menu__list li:first-child {
+      margin: 0;
+   }
+   .header__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   .header::before {
+      z-index: 4;
+   }
+
+   .header__logo {
+      z-index: 5;
+      flex: 0 0 50px;
+   }
+
+   .header__first::after {
+      display: none;
+   }
+
+   .header__second {
+      display: none;
+   }
+
+   .header__menu {
+      height: 75px;
+   }
+
+   .header__button {
+      display: none;
+   }
+
+   .second-menu {
+      display: none;
+   }
+}
 
 // burger
 
@@ -8,9 +343,7 @@
    display: none;
 }
 
-
-
-@media (max-width: 767px) {
+@media (max-width: $md3) {
    body.lock {
       overflow: hidden;
    }
