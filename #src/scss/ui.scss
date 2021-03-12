@@ -1,5 +1,11 @@
 /*----- user interface ----- */
 // Готовые блоки
+.title {
+   font-family: "Gilroy Heavy";
+   text-align: center;
+   color: $textColor;
+   @include adaptive-font(36, 25);
+}
 
 // Адаптивные изображения "IBG"
 .ibg {
