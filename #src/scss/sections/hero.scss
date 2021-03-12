@@ -1,0 +1,73 @@
+/*----- hero ----- */
+.hero {
+   &__content {
+      padding: 100px 0px 180px 0px;
+      position: relative;
+      border: 1px solid red;
+   }
+
+   &__title {
+      font-family: "Gilroy Heavy";
+      color: $textColor;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      @include adaptive-font(40, 24);
+   }
+
+   &__subtitle {
+      font-family: "Gilroy Medium";
+      font-size: 24px;
+      margin-bottom: 30px;
+   }
+
+   &__subtitle span {
+      font-size: 24px;
+      font-family: "Gilroy Extra Bold";
+      margin-left: 5px;
+   }
+
+   &__button {
+      font-size: 16px;
+      padding: 16px 65px;
+      font-family: "Gilroy Bold";
+      color: white;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #87aff1 0%, #6c80cb 100%, #6c80cb 100%);
+      box-shadow: 0px 12px 20px rgba(132, 170, 237, 0.454846);
+      border-radius: 3px;
+      transition: transform 0.3s ease-in-out;
+   }
+
+   &__button:hover {
+      transform: translateY(-7px);
+   }
+
+   &__image {
+      position: absolute;
+      bottom: -4px;
+      right: 84px;
+      z-index: 2;
+   }
+
+   &__image-bg {
+      position: absolute;
+      z-index: -1;
+      bottom: 0px;
+      right: -35%;
+   }
+}
+
+@media (max-width: $md2) {
+   .hero__image {
+      display: none;
+   }
+   .hero__image-bg {
+      right: -65%;
+   }
+}
+
+@media (max-width: $md3) {
+   .hero__image-bg {
+      display: none;
+   }
+}
